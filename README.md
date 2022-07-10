@@ -15,10 +15,10 @@ $ cd railsmysql
 
 2.関連するdockerイメージ,コンテナを削除する。
 
-3.rails newコマンドをweb上で実行
+3.rails newコマンドをrailmapp上で実行
 ```
 $ docker-compose build
-$ docker-compose run app rails new . --force --no-deps --database=mysql --skip-test --webpacker
+$ docker-compose run railmapp rails new . --force --no-deps --database=mysql --skip-test --webpacker
 ```
 
 4.railsのディレクトリができているかチェック
@@ -38,7 +38,7 @@ $ docker-compose build
 
 7.webpackerのインストール
 ```
-$ docker-compose run app rails webpacker:install
+$ docker-compose run railmapp rails webpacker:install
 ```
 
 8.DBの設定を変更
@@ -51,7 +51,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV.fetch("MYSQL_USERNAME", "root") %>
   password: <%= ENV.fetch("MYSQL_PASSWORD", "password") %>
-  host: <%= ENV.fetch("MYSQL_HOST", "db") %>
+  host: <%= ENV.fetch("MYSQL_HOST", "mysqldb") %>
 
 development:
   <<: *default
@@ -75,7 +75,7 @@ $ docker-compose up
 
 10.別タブを開き下記のコマンドを実行してDBを作成
 ```
-$ docker-compose run app rake db:create
+$ docker-compose run railmapp rake db:create
 ```
 
 ## ログインURL
