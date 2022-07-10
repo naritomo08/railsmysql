@@ -10,7 +10,7 @@ https://codelabo.com/posts/20201010192152
 1.本レポジトリをクロンする。
 ```
 $ git clone git@github.com:naritomo08/railsmysql.git railsdocker
-$ cd railsdocker
+$ cd railsmysql
 ```
 
 2.関連するdockerイメージ,コンテナを削除する。
