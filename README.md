@@ -7,13 +7,15 @@ https://codelabo.com/posts/20201010192152
 
 ## 環境構築手順
 
-1.本レポジトリをクロンする。
+1.不要なdockerイメージ,ボリューム,コンテナを削除する。
+
+2.本レポジトリをクロンする。
 ```
 $ git clone git@github.com:naritomo08/railsmysql.git railsmysql
 $ cd railsmysql
 ```
 
-1.1　railsアプリがすでにある場合
+2.1　railsアプリがすでにある場合
 
 ```bash
 $ rm -rf src
@@ -22,8 +24,6 @@ $ docker-compose build
 ```
 
 手順9に飛んでサービスが立ち上がるか確認する。
-
-2.関連するdockerイメージ,コンテナを削除する。
 
 3.rails newコマンドをrailmapp上で実行
 ```
