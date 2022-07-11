@@ -9,7 +9,7 @@ https://codelabo.com/posts/20201010192152
 
 1.本レポジトリをクロンする。
 ```
-$ git clone git@github.com:naritomo08/railsmysql.git railsdocker
+$ git clone git@github.com:naritomo08/railsmysql.git railsmysql
 $ cd railsmysql
 ```
 
