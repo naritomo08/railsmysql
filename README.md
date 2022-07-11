@@ -81,12 +81,21 @@ production:
 9.コンテナ立ち上げ
 ```
 $ docker-compose up
+途中で立ち上がらないなどのエラーが出ないこと。
 ```
 
 10.別タブを開き下記のコマンドを実行してDBを作成
 ```
-$ docker-compose run railmapp rake db:create
+$ docker exec -ti railsmysql_railmapp_1 bash
+$ rake db:create
 ```
+
+本手順でプロジェクト作り直しから実施した場合、
+すべてのコンソールを立ち上げなおし、
+すべてのコンテナを削除後立ち上げなおすこと。
+
+既存のプロジェクトの場合、すべてのコンソールを立ち上げなおし
+下記手順を使用し立ち上げなおしを実施すること。
 
 ## ログインURL
 
@@ -99,4 +108,18 @@ http://localhost:3000
 ```
 docker-compose up -d
 docker-compose down
+```
+
+## 起動中のコンテナに入る
+
+1. appコンテナ
+
+```bash
+$ docker exec -ti railsmysql_railmapp_1 bash
+```
+
+2. DBコンテナ
+
+```bash
+$ docker exec -ti railsmysql_mysqldb_1 bash
 ```
