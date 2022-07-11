@@ -17,7 +17,16 @@ $ cd railsmysql
 $ 
 ```
 
-2.1　railsアプリがすでにある場合
+2.1 railsアプリの新規作成からする場合
+
+```bash
+$ mkdir src
+$ cp Gemfile src/
+$ cp Gemfile.lock src/
+```
+手順3以降を実施する。
+
+2.2　railsアプリがすでにある場合
 
 ```bash
 $ rm -rf src
