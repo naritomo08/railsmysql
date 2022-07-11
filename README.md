@@ -14,7 +14,6 @@ https://codelabo.com/posts/20201010192152
 ```
 $ git clone git@github.com:naritomo08/railsmysql.git railsmysql
 $ cd railsmysql
-$ 
 ```
 
 2.1 railsアプリの新規作成からする場合
@@ -49,6 +48,7 @@ $ ls -l
 ```
 
 5.所有者がrootになっているファイルの所有者を現在のユーザに書き換え
+*状況によってはいらない。
 
 ```
 $ sudo chown -R $USER:$USER .
