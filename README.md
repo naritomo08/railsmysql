@@ -43,7 +43,7 @@ $ docker-compose run railmapp rails webpacker:install
 
 8.DBの設定を変更
 ```
-$ vi config/database.yml
+$ vi src/config/database.yml
 
 default: &default
   adapter: mysql2
