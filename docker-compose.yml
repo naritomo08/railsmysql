@@ -17,7 +17,7 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - db
+      - mysqldb
     stdin_open: true
     tty: true
 volumes:
