@@ -124,7 +124,24 @@ $ rake db:create
 ## ログインURL
 
 ```
+1. Rubyサイト
 http://localhost:3000
+
+2. adminer
+
+http://127.0.0.1:8081
+
+
+* ログイン情報
+  - データベース種類: MySQL
+  - サーバ: mysqldb
+  - ユーザ名: root
+  - パスワード:password
+
+3. mailhog
+
+http://127.0.0.1:8025
+
 ```
 
 ## コンテナ起動

@@ -9,6 +9,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     volumes:
       - mysql-data:/var/lib/mysql
+
   railmapp:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
@@ -20,6 +21,22 @@ services:
       - mysqldb
     stdin_open: true
     tty: true
+
+  adminer:
+    image: adminer:4.8.0
+    container_name: railsmysql_adminer
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mysqldb
+
+  mail:
+    image: mailhog/mailhog
+    container_name: railsmysql_mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
 volumes:
   mysql-data:
     driver: local
