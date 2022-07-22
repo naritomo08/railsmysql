@@ -13,6 +13,8 @@ https://codelabo.com/posts/20201010192152
 
 ```
 $ git clone git@github.com:naritomo08/railsmysql.git railsmysql
+$ git config --local user.name "naritomo"
+$ git config --local user.email naritomo08@gmail.com
 $ cd railsmysql
 ```
 
@@ -29,6 +31,8 @@ $ cp Gemfile.lock src/
 
 ```bash
 $ git clone git@github.com:naritomo08/railsmysqlapp.git src
+$ git config --local user.name "naritomo"
+$ git config --local user.email naritomo08@gmail.com
 $ docker-compose build
 ```
 
