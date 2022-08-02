@@ -24,7 +24,6 @@ services:
 
   adminer:
     image: adminer:4.8.0
-    container_name: railsmysql_adminer
     ports:
       - "8081:8080"
     depends_on:
@@ -32,7 +31,6 @@ services:
 
   mail:
     image: mailhog/mailhog
-    container_name: railsmysql_mailhog
     ports:
       - "1025:1025"
       - "8025:8025"

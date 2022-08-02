@@ -167,13 +167,13 @@ docker-compose down
 1. appコンテナ
 
 ```bash
-$ docker exec -ti railsmysql_railmapp_1 bash
+$ docker-compose exec railmapp bash
 ```
 
 2. DBコンテナ
 
 ```bash
-$ docker exec -ti railsmysql_mysqldb_1 bash
+$ docker-compose exec mysqldb bash
 ```
 
 ## Gemfileを更新した場合
