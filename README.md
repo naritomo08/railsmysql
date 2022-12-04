@@ -11,70 +11,53 @@ windows11+wsl2+Ubuntu22+DockerCompose+vscodeでの環境を構築してること
 
 ### 不要なdockerイメージ,ボリューム,コンテナを削除する。
 
-2.本レポジトリをクロンする。
+### 本レポジトリをクロンする。
 
 ```bash
 $ git clone git@github.com:naritomo08/railsmysql.git railsmysql
 $ cd railsmysql
-$ git config --local user.name "naritomo"
-$ git config --local user.email naritomo08@gmail.com
 ```
 
-2.1 railsアプリの新規作成からする場合
+### railsアプリの新規作成準備
 
 ```bash
 $ mkdir src
 $ cp Gemfile src/
 $ cp Gemfile.lock src/
 ```
-手順3以降を実施する。
 
-2.2　railsアプリがすでにある場合
-
-```bash
-$ git clone git@github.com:naritomo08/railsmysqlapp.git src
-$ docker-compose build
-$ cd src
-$ git config --local user.name "naritomo"
-$ git config --local user.email naritomo08@gmail.com
-
-```
-
-手順9に飛んでサービスが立ち上がるか確認する。
-
-3.rails newコマンドをrailmapp上で実行
+### rails newコマンドをrailmapp上で実行
 
 ```bash
 $ docker-compose build
 $ docker-compose run railmapp rails new . --force --no-deps --database=mysql --skip-test --webpacker
 ```
 
-4.railsのディレクトリができているかチェック
+### railsのディレクトリができているかチェック
 
 ```bash
 $ ls -l
 ```
 
-5.所有者がrootになっているファイルの所有者を現在のユーザに書き換え
-*状況によってはいらない。
+### 所有者がrootになっているファイルの所有者を現在のユーザに書き換え
 
 ```bash
 $ sudo chown -R $USER:$USER .
 ```
 
-6.rails new で新しいGemfileができたので再ビルド
+### rails new で新しいGemfileができたので再ビルド
 
 ```bash
 $ docker-compose build
 ```
 
-7.webpackerのインストール
+### webpackerのインストール
 
 ```bash
 $ docker-compose run railmapp rails webpacker:install
 ```
 
-8.DBの設定を変更
+### DBの設定を変更
 
 ```bash
 $ vi src/config/database.yml
@@ -102,14 +85,14 @@ production:
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
 ```
 
-9.コンテナ立ち上げ
+### コンテナ立ち上げ
 
 ```bash
 $ docker-compose up
 途中で立ち上がらないなどのエラーが出ないこと。
 ```
 
-10.別タブを開き下記のコマンドを実行してDBを作成
+### 別タブを開き下記のコマンドを実行してDBを作成
 
 ```bash
 $ docker exec -ti railsmysql_railmapp_1 bash
@@ -129,7 +112,7 @@ $ rake db:create
 
 http://localhost:3000
 
-### adminer
+### adminer(DB管理ツール)
 
 http://127.0.0.1:8081
 
@@ -140,7 +123,7 @@ http://127.0.0.1:8081
   - ユーザ名: root
   - パスワード:password
 
-### mailhog
+### mailhog(メールサーバ)
 
 http://127.0.0.1:8025
 
