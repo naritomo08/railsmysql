@@ -92,7 +92,7 @@ $ docker-compose up -d
 途中で立ち上がらないなどのエラーが出ないこと。
 ```
 
-### 別タブを開き下記のコマンドを実行してDBを作成
+### 下記のコマンドを実行してDBを作成
 
 ```bash
 $ docker exec -ti railsmysql_railmapp_1 bash
