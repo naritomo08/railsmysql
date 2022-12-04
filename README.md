@@ -1,17 +1,18 @@
 ## 参考URL
-https://codelabo.com/posts/20201010192152
+[Windowsで Docker を用いて Rails 6.0 + MySQL の環境構築](https://codelabo.com/posts/20201010192152)
+[Elixirをdocker環境で立ち上げてみる。](https://qiita.com/naritomo08/items/fecf4ace7b9ca9078102)
 
 ## 事前準備
 
-自分の端末の公開鍵をgithubの個人設定に登録してあること。
+windows11+wsl2+Ubuntu22+DockerCompose+vscodeでの環境を構築してること。
 
 ## 環境構築手順
 
-1.不要なdockerイメージ,ボリューム,コンテナを削除する。
+### 不要なdockerイメージ,ボリューム,コンテナを削除する。
 
 2.本レポジトリをクロンする。
 
-```
+```bash
 $ git clone git@github.com:naritomo08/railsmysql.git railsmysql
 $ cd railsmysql
 $ git config --local user.name "naritomo"
@@ -42,39 +43,39 @@ $ git config --local user.email naritomo08@gmail.com
 
 3.rails newコマンドをrailmapp上で実行
 
-```
+```bash
 $ docker-compose build
 $ docker-compose run railmapp rails new . --force --no-deps --database=mysql --skip-test --webpacker
 ```
 
 4.railsのディレクトリができているかチェック
 
-```
+```bash
 $ ls -l
 ```
 
 5.所有者がrootになっているファイルの所有者を現在のユーザに書き換え
 *状況によってはいらない。
 
-```
+```bash
 $ sudo chown -R $USER:$USER .
 ```
 
 6.rails new で新しいGemfileができたので再ビルド
 
-```
+```bash
 $ docker-compose build
 ```
 
 7.webpackerのインストール
 
-```
+```bash
 $ docker-compose run railmapp rails webpacker:install
 ```
 
 8.DBの設定を変更
 
-```
+```bash
 $ vi src/config/database.yml
 
 default: &default
@@ -102,14 +103,14 @@ production:
 
 9.コンテナ立ち上げ
 
-```
+```bash
 $ docker-compose up
 途中で立ち上がらないなどのエラーが出ないこと。
 ```
 
 10.別タブを開き下記のコマンドを実行してDBを作成
 
-```
+```bash
 $ docker exec -ti railsmysql_railmapp_1 bash
 $ rake db:create
 ```
@@ -123,11 +124,11 @@ $ rake db:create
 
 ## ログインURL
 
-```
-1. Rubyサイト
+### Rubyサイト
+
 http://localhost:3000
 
-2. adminer
+### adminer
 
 http://127.0.0.1:8081
 
@@ -138,27 +139,25 @@ http://127.0.0.1:8081
   - ユーザ名: root
   - パスワード:password
 
-3. mailhog
+### mailhog
 
 http://127.0.0.1:8025
 
-```
-
 ## コンテナ起動
 
-```
+```bash
 docker-compose up -d
 ```
 
 ## コンテナ停止
 
-```
+```bash
 docker-compose stop
 ```
 
 ## コンテナ削除
 
-```
+```bash
 docker-compose down
 ```
 
