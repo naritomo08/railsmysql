@@ -95,7 +95,7 @@ $ docker-compose up -d
 ### 下記のコマンドを実行してDBを作成
 
 ```bash
-$ docker exec -ti railsmysql_railmapp_1 bash
+$ docker-compose exec railmapp bash
 $ rake db:create
 ```
 
