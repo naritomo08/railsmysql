@@ -11,7 +11,7 @@ windows11+wsl2+Ubuntu22+DockerCompose+vscodeでの環境を構築してること
 
 ### 不要なdockerイメージ,ボリューム,コンテナを削除する。
 
-### 本レポジトリをクロンする。
+### 本リポジトリをクローンする。
 
 ```bash
 $ git clone https://github.com/naritomo08/railsmysql.git railsmysql
