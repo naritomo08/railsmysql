@@ -88,7 +88,7 @@ production:
 ### コンテナ立ち上げ
 
 ```bash
-$ docker-compose up
+$ docker-compose up -d
 途中で立ち上がらないなどのエラーが出ないこと。
 ```
 
