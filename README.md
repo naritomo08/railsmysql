@@ -62,6 +62,8 @@ $ docker-compose run railmapp rails webpacker:install
 ```bash
 $ vi src/config/database.yml
 
+以下の内容に上書きする。
+
 default: &default
   adapter: mysql2
   encoding: utf8mb4
