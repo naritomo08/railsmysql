@@ -30,7 +30,7 @@ $ cp Gemfile.lock src/
 
 ```bash
 $ docker-compose build
-$ docker-compose run railmapp rails new . --force --no-deps --database=mysql --skip-test --webpacker
+$ docker-compose run --no-deps railmapp rails new . --force --no-deps --database=mysql --skip-test --webpacker
 ```
 
 ### railsのディレクトリができているかチェック
