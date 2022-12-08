@@ -36,7 +36,8 @@ $ docker-compose run railmapp rails new . --force --no-deps --database=mysql --s
 ### railsのディレクトリができているかチェック
 
 ```bash
-$ ls -l
+$ ls -l src
+→複数のファイル/フォルダができていること。
 ```
 
 ### 所有者がrootになっているファイルの所有者を現在のユーザに書き換え
