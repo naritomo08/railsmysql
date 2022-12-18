@@ -18,6 +18,13 @@ $ git clone https://github.com/naritomo08/railsmysql.git railsmysql
 $ cd railsmysql
 ```
 
+後にファイル編集などをして、git通知が煩わしいときは
+作成したフォルダで以下のコマンドを入れる。
+
+```bash
+ rm -rf .git
+```
+
 ### railsアプリの新規作成準備
 
 ```bash
