@@ -14,7 +14,7 @@ windows11+wsl2+Ubuntu22+DockerCompose+vscodeでの環境を構築してること
 ### 本リポジトリをクローンする。
 
 ```bash
-$ git clone https://github.com/naritomo08/railsmysql.git railsmysql
+$ git -b rails7 clone https://github.com/naritomo08/railsmysql.git railsmysql
 $ cd railsmysql
 ```
 
