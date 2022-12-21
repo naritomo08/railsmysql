@@ -59,12 +59,6 @@ $ sudo chown -R $USER:$USER .
 $ docker-compose build
 ```
 
-### webpackerのインストール
-
-```bash
-$ docker-compose run railmapp rails webpacker:install
-```
-
 ### DBの設定を変更
 
 ```bash
