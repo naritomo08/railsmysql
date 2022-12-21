@@ -1,4 +1,4 @@
-FROM ruby:2.7.1
+FROM ruby:3.1.3
 
 ARG UID=1000
 ARG GID=1000
